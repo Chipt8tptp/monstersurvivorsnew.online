@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 谷歌Analytics 4跟踪代码（请替换为你自己的测量ID） -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- 谷歌SEO核心标签 -->
+    <title>Monster Survivors - Play Free Online | Official Site</title>
+    <meta name="description" content="Play Monster Survivors online for free! Survive endless waves of monsters, unlock powerful abilities, and evolve your character to become the last one standing. No download required.">
+    <meta name="keywords" content="Monster Survivors, free online game, survival game, action game, roguelike game, play now">
+    <link rel="canonical" href="https://monstersurvivorsnew.online/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Monster Survivors - Play Free Online">
+    <meta property="og:description" content="Survive endless monster waves and become the ultimate survivor in this addictive action roguelike game.">
+    <meta property="og:url" content="https://monstersurvivorsnew.online/">
+    <meta property="og:type" content="website">
+    
+    <!-- 苹果风格Tailwind配置 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            blue: '#007AFF',
+                            lightblue: '#5AC8FA',
+                            gray: '#F5F5F7',
+                            darkgray: '#86868B',
+                            black: '#1D1D1F',
+                            white: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .game-frame {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .nav-link {
+                @apply py-2 px-4 rounded-lg transition-colors hover:bg-apple-gray hover:text-apple-blue;
+            }
+            .back-to-top {
+                @apply fixed bottom-6 right-6 w-12 h-12 bg-apple-blue text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible hover:bg-apple-blue/90 hover:shadow-xl z-40;
+            }
+            .back-to-top.visible {
+                @apply opacity-100 visible;
+            }
+        }
+    </style>
+</head>
+<body class="bg-apple-gray text-apple-black font-sans antialiased">
+    <!-- 导航栏（含移动端汉堡菜单） -->
+    <nav class="bg-apple-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-apple-blue">Monster Survivors</span>
+                </div>
+                
+                <!-- 桌面端导航 -->
+                <div class="hidden md:flex space-x-2">
+                    <a href="#play" class="nav-link">Play Now</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#how-to-play" class="nav-link">How to Play</a>
+                    <a href="#features" class="nav-link">Features</a>
+                </div>
+                
+                <!-- 移动端汉堡按钮 -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="p-2 rounded-lg hover:bg-apple-gray transition-colors" aria-label="Toggle menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端下拉菜单（默认隐藏） -->
+        <div id="mobile-menu" class="md:hidden hidden bg-apple-white border-t border-gray-200 shadow-lg">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#play" class="block nav-link">Play Now</a>
+                <a href="#about" class="block nav-link">About</a>
+                <a href="#how-to-play" class="block nav-link">How to Play</a>
+                <a href="#features" class="block nav-link">Features</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-balance">Monster Survivors</h1>
+            <p class="text-xl md:text-2xl text-apple-darkgray mb-10 max-w-2xl mx-auto">
+                Survive endless waves of monsters, upgrade your skills, and become the ultimate survivor in this thrilling action roguelike game.
+            </p>
+            <a href="#play" class="inline-block bg-apple-blue text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-apple-blue/90 transition-colors shadow-lg hover:shadow-xl">
+                Play Now - Free
+            </a>
+        </div>
+    </section>
+
+    <!-- 游戏iframe区域 -->
+    <section id="play" class="py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Play Monster Survivors Online</h2>
+            <div class="game-frame aspect-video w-full">
+                <iframe 
+                    src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    allowfullscreen
+                    allow="autoplay; encrypted-media; fullscreen"
+                    loading="lazy"
+                    title="Monster Survivors Online Game"
+                ></iframe>
+            </div>
+            <p class="text-center text-apple-darkgray mt-4">
+                No download required. Play directly in your browser.
+            </p>
+        </div>
+    </section>
+
+    <!-- 游戏介绍 -->
+    <section id="about" class="py-16 bg-apple-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Monster Survivors</h2>
+            <div class="space-y-6 text-lg leading-relaxed">
+                <p>
+                    Monster Survivors is an addictive action roguelike survival game where you face off against hordes of relentless monsters. 
+                    With each wave, the enemies grow stronger and more numerous, testing your skills and strategy to the limit.
+                </p>
+                <p>
+                    Choose your character, collect experience points by defeating monsters, and unlock powerful upgrades and abilities. 
+                    Every run is unique, with random item drops and skill combinations that allow for endless replayability.
+                </p>
+                <p>
+                    Whether you're a casual player looking for a quick game or a hardcore gamer aiming for the highest score, 
+                    Monster Survivors offers hours of exciting gameplay for everyone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 玩法说明 -->
+    <section id="how-to-play" class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">How to Play</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-apple-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-apple-blue">Controls</h3>
+                    <ul class="space-y-2">
+                        <li>• <strong>WASD or Arrow Keys</strong>: Move your character</li>
+                        <li>• <strong>Mouse</strong>: Aim your attacks</li>
+                        <li>• <strong>Left Click</strong>: Fire primary weapon</li>
+                        <li>• <strong>Space</strong>: Use special ability</li>
+                    </ul>
+                </div>
+                <div class="bg-apple-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-apple-blue">Tips for Survival</h3>
+                    <ul class="space-y-2">
+                        <li>• Keep moving to avoid being surrounded</li>
+                        <li>• Prioritize upgrades that match your playstyle</li>
+                        <li>• Collect health pickups to stay alive</li>
+                        <li>• Combine different skills for maximum effect</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏特色 -->
+    <section id="features" class="py-16 bg-apple-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Game Features</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">⚔️</div>
+                    <h3 class="text-xl font-semibold mb-2">Endless Gameplay</h3>
+                    <p class="text-apple-darkgray">Face infinite waves of monsters with increasing difficulty</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-xl font-semibold mb-2">Unique Upgrades</h3>
+                    <p class="text-apple-darkgray">Unlock over 50 different skills and abilities</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">🎮</div>
+                    <h3 class="text-xl font-semibold mb-2">Multiple Characters</h3>
+                    <p class="text-apple-darkgray">Choose from different characters with unique starting abilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- 页脚 -->
+    <footer class="bg-apple-black text-apple-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-xl font-bold mb-4">Monster Survivors</p>
+            <p class="text-apple-darkgray mb-6">© 2025 monstersurvivorsnew.online. All rights reserved.</p>
+            <p class="text-sm text-apple-darkgray">
+                This is an unofficial fan site. Monster Survivors is a trademark of its respective owners.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 交互脚本 -->
+    <script>
+        // 移动端汉堡菜单
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // 回到顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
