@@ -88,11 +88,50 @@
     .rank-number{font-weight:bold;color:var(--blue)}
     .rank-input{margin-top:12px;padding:10px;width:180px;border-radius:10px;border:1px solid #ddd;background:white}
     .dark-mode .rank-input{background:#222;color:#fff;border-color:#444}
+
+    /* 新增：攻略/动态板块的样式 */
+    .news-list {
+      max-width: 800px;
+      margin: 20px auto 0;
+      text-align: left;
+    }
+    .news-item {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+    .dark-mode .news-item {
+      background: #1e1e1e;
+    }
+    .news-item h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--blue);
+    }
+    .news-item .meta {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+    .news-item p {
+      line-height: 1.6;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     @media(max-width:768px){
       .virtual-controls{display:flex}
       .nav-links{display:none}
       .menu-btn{display:block}
       .hero h1{font-size:36px}
+      .news-item h3 { font-size: 20px; }
     }
   </style>
 </head>
@@ -121,6 +160,8 @@
       <a href="#rank">Leaderboard</a>
       <a href="#about">About</a>
       <a href="#how">How to Play</a>
+      <!-- 新增导航链接 -->
+      <a href="#news">News & Guides</a>
     </div>
     <button class="menu-btn">☰</button>
   </div>
@@ -193,6 +234,46 @@
       <div class="card">🌙 Dark Mode</div>
     </div>
   </div>
+
+  <!-- ========== 新增：攻略/动态板块 ========== -->
+  <div class="section" id="news">
+    <h2>📰 News & Guides</h2>
+    <div class="news-list">
+
+      <!-- 示例文章 1：更新日志 -->
+      <div class="news-item">
+        <h3>Update v2.1 – New Character & Balance Changes</h3>
+        <div class="meta">📅 August 15, 2025 | 🔖 Patch Notes</div>
+        <p>
+          We just released a major update for Monster Survivors! The new character <strong>"Shadow Hunter"</strong> is now available, featuring a unique dash ability and increased critical hit chance. We also rebalanced enemy waves in the later stages to make the game fairer and more exciting. Read on for the full list of changes and improvements.
+        </p>
+        <a href="#" class="read-more">Read Full Update →</a>
+      </div>
+
+      <!-- 示例文章 2：高分攻略 -->
+      <div class="news-item">
+        <h3>Top 5 Tips to Reach 30,000+ Points</h3>
+        <div class="meta">📅 July 28, 2025 | 🎯 Strategy Guide</div>
+        <p>
+          Want to dominate the leaderboard? Here are our five essential tips for surviving longer and scoring higher in Monster Survivors: 1) Always keep moving in a circular pattern, 2) Prioritize area-damage upgrades early, 3) Use the environment to funnel enemies, 4) Save your dash for emergency escapes, and 5) Learn which characters synergize best with your playstyle. Master these and you'll be topping the charts in no time!
+        </p>
+        <a href="#" class="read-more">Read Full Guide →</a>
+      </div>
+
+      <!-- 示例文章 3：社区活动 -->
+      <div class="news-item">
+        <h3>Community Challenge: Highest Score Wins a Prize!</h3>
+        <div class="meta">📅 July 15, 2025 | 🏆 Event</div>
+        <p>
+          It's time for our first official community challenge! From now until August 31, submit your best score using the in-game leaderboard for a chance to win exclusive Monster Survivors merchandise. The top three players will receive a limited edition t-shirt and a digital badge. Check out the full rules and start climbing the ranks today!
+        </p>
+        <a href="#" class="read-more">Learn More →</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- ========== 攻略/动态板块结束 ========== -->
+
 </div>
 
 <button id="back-to-top">↑</button>
