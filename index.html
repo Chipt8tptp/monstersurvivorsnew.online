@@ -141,6 +141,23 @@
     .hero h1{font-size:48px;margin-bottom:20px}
     .hero p{font-size:20px;color:var(--gray);max-width:650px;margin:0 auto 20px}
     .play-btn{display:inline-block;background:var(--blue);color:white;padding:16px 32px;border-radius:14px;font-weight:bold;text-decoration:none}
+    /* 新增：Pro 按钮悬停动画 */
+    .pro-btn {
+      display:inline-block;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      color: #1a1a2e;
+      padding:16px 32px;
+      border-radius:14px;
+      font-weight:bold;
+      text-decoration:none;
+      margin-left: 15px;
+      box-shadow: 0 0 20px rgba(246, 211, 101, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pro-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 25px rgba(246, 211, 101, 0.6);
+    }
     .game-section{text-align:center;margin:10px 0}
     .game-toolbar{display:flex;gap:10px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
     .game-toolbar button{padding:10px 14px;border-radius:10px;border:none;background:var(--blue);color:white;font-weight:bold;cursor:pointer}
@@ -301,13 +318,20 @@
         line-height: 60px;
         font-size: 12px;
       }
+
+      /* Pro 按钮在移动端换行居中 */
+      .pro-btn {
+        display: block;
+        margin: 15px auto 0;
+        max-width: 250px;
+      }
     }
 
     @media(max-width: 400px) {
       .hero h1 {
         font-size: 28px;
       }
-      .play-btn {
+      .play-btn, .pro-btn {
         padding: 12px 24px;
         font-size: 16px;
       }
@@ -356,11 +380,32 @@
   <h1>Play Monster Survivors Online Free</h1>
   <p>Survive endless waves of monsters, upgrade your skills, and become the ultimate survivor. No download required — play instantly in your browser!</p>
   <a href="#play" class="play-btn">Play Now — Free</a>
+  <!-- ===== [新增] Creem 付费按钮 ===== -->
+  <a href="https://www.creem.io/test/payment/prod_3FmuEfTBC2k5NkFBPRMXc0?theme=dark" class="pro-btn">⚡ Unlock Pro</a>
 </div>
 
 <div class="container">
   <div class="game-section" id="play">
     <h2>⚔️ Play Monster Survivors Online</h2>
+    
+    <!-- ===== [新增] Creem 付费横幅 ===== -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                border-radius: 10px; 
+                padding: 15px 20px; 
+                margin: 0 auto 20px; 
+                text-align: center; 
+                color: white;
+                max-width: 700px;">
+        <span style="font-size: 1.1em;">🔥 Remove ads & unlock all characters — </span>
+        <a href="https://www.creem.io/test/payment/prod_3FmuEfTBC2k5NkFBPRMXc0?theme=dark" 
+           style="color: #ffd700; 
+                  font-weight: bold; 
+                  text-decoration: underline; 
+                  font-size: 1.1em;">
+           Get Premium for $9.9/Monthly
+        </a>
+    </div>
+
     <div class="game-toolbar">
       <button id="fullscreen">Fullscreen</button>
       <button id="repair">Fix Game</button>
@@ -601,6 +646,7 @@
 <div class="footer">
   <div class="container">
     <p style="font-size:20px; font-weight:bold; margin-bottom:10px;">Monster Survivors</p>
+	<p style="font-size:18px; font-weight:bold; margin-bottom:10px;">Play the best free online survival game. No download required.</p>
     <div class="footer-links">
       <a onclick="openModal('privacyModal')">Privacy Policy</a>
       <a onclick="openModal('termsModal')">Terms of Service</a>
