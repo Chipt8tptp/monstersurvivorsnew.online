@@ -31,6 +31,68 @@
   <meta property="wechat:title" content="Monster Survivors">
   <meta property="wechat:description" content="Free online survival game, play now!">
 
+	<!-- ==============================================
+	     Monetag 广告代码 - 单页iframe游戏站专用
+	     替换下面两个script标签中的src为你从Monetag后台复制的完整代码
+	     ============================================== -->
+	
+	<!-- 1. Vignette Banner - 全局全屏插屏广告（主要收入来源） -->
+	<script>(function(s){s.dataset.zone='11016893',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+	
+	<!-- 2. Multitag - 游戏加载时展示的广告组合 -->
+	<script src="https://quge5.com/88/tag.min.js" data-zone="240078" async data-cfasync="false"></script>
+	
+	<!-- ==============================================
+	     广告配置与触发逻辑（无需修改，直接复制）
+	     ============================================== -->
+	<script>
+	// 全局广告配置
+	window.monetag = window.monetag || [];
+	
+	// Vignette广告频率控制：每20分钟最多1次，平衡收益与体验
+	window.monetag.push(['setOption', 'vignette', {
+	    frequency: 20, // 分钟
+	    showOnExit: true, // 用户离开页面时展示
+	    showOnClick: false // 关闭自动点击触发，改为手动控制
+	}]);
+	
+	// 页面加载完成后初始化广告
+	document.addEventListener('DOMContentLoaded', function() {
+	    // 找到页面上所有的游戏iframe
+	    const gameIframes = document.querySelectorAll('iframe[src*="game"]');
+	    
+	    // 为每个iframe添加加载事件监听
+	    gameIframes.forEach(function(iframe) {
+	        // 游戏开始加载时展示广告
+	        iframe.addEventListener('load', function() {
+	            // 延迟1秒展示，让游戏先开始加载
+	            setTimeout(function() {
+	                if (window.monetag && typeof window.monetag.push === 'function') {
+	                    window.monetag.push(['show', 'multitag']);
+	                }
+	            }, 1000);
+	        });
+	
+	        // 游戏结束/关闭时展示广告（可选）
+	        iframe.addEventListener('unload', function() {
+	            if (window.monetag && typeof window.monetag.push === 'function') {
+	                window.monetag.push(['show', 'multitag']);
+	            }
+	        });
+	    });
+	
+	    // 点击"开始游戏"按钮时展示广告
+	    const playButtons = document.querySelectorAll('[id*="play"], [class*="play"], [onclick*="game"]');
+	    playButtons.forEach(function(button) {
+	        button.addEventListener('click', function() {
+	            if (window.monetag && typeof window.monetag.push === 'function') {
+	                window.monetag.push(['show', 'multitag']);
+	            }
+	        });
+	    });
+	});
+	</script>
+	
   <!-- 结构化数据(Website + VideoGame + FAQ + BreadcrumbList) -->
   <script type="application/ld+json">
   {
@@ -381,14 +443,32 @@
   <p>Survive endless waves of monsters, upgrade your skills, and become the ultimate survivor. No download required — play instantly in your browser!</p>
   <a href="#play" class="play-btn">Play Now — Free</a>
   <!-- ===== [新增] Creem 付费按钮 ===== -->
-  <a href="https://www.creem.io/test/payment/prod_3FmuEfTBC2k5NkFBPRMXc0?theme=dark" class="pro-btn">⚡ Unlock Pro</a>
+  <a href="https://www.creem.io/test/payment/prod_7eiIyiDn5lQxVB8C22inRP?theme=dark" class="pro-btn">⚡ Unlock Pro</a>
 </div>
 
 <div class="container">
   <div class="game-section" id="play">
     <h2>⚔️ Play Monster Survivors Online</h2>
     
-    
+    <!-- ===== [新增] Creem 付费横幅 ===== -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                border-radius: 10px; 
+                padding: 12px 16px; 
+                margin: 0 auto 20px; 
+                text-align: center; 
+                color: white;
+                max-width: 700px;
+                width: 100%;
+                white-space: normal;
+                line-height: 1.45;">
+        <a href="https://www.creem.io/test/payment/prod_7eiIyiDn5lQxVB8C22inRP?theme=dark" 
+           style="color: #ffd700; 
+                  font-weight: bold; 
+                  text-decoration: underline;
+                  display: inline;">
+           🔥 Get Pro: $9.9 One-Time Purchase · 100% Ad-Free Forever · Unlock All Characters
+        </a>
+    </div>
 
     <div class="game-toolbar">
       <button id="fullscreen">Fullscreen</button>
