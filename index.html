@@ -450,7 +450,7 @@
   <div class="game-section" id="play">
     <h2>⚔️ Play Monster Survivors Online</h2>
     
-    <!-- ===== [新增] Creem 付费横幅 ===== -->
+    <!-- ===== Creem 付费横幅 ===== -->
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
                 border-radius: 10px; 
                 padding: 12px 16px; 
@@ -469,6 +469,25 @@
            🔥 Get Pro: $9.9 One-Time Purchase · 100% Ad-Free Forever · Unlock All Characters
         </a>
     </div>
+
+    <div class="game-toolbar">
+      <button id="fullscreen">Fullscreen</button>
+      <button id="repair">Fix Game</button>
+      <button id="darkmode">Dark Mode</button>
+      <button id="exportSave">Export Save</button>
+      <button id="importSave">Import Save</button>
+    </div>
+    <div class="save-notice">✅ Game progress is saved automatically in your browser. Use Export/Import to play across devices.</div>
+    <div class="game-frame" id="gameFrame">
+      <!-- 已替换为纯净无广告游戏源 -->
+      <iframe id="gameIFrame" 
+              src="https://www.onlinegames.io/games/monster-survivors/index.html" 
+              allowfullscreen 
+              sandbox="allow-scripts allow-same-origin allow-forms">
+      </iframe>
+    </div>
+    <div class="last-play" id="lastPlay"></div>
+  </div>
 
     <div class="game-toolbar">
       <button id="fullscreen">Fullscreen</button>
